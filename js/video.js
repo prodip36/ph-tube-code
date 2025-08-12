@@ -11,10 +11,15 @@ fetch('https://openapi.programming-hero.com/api/phero-tube/categories')
 };
 
 const displayCategories = (categories) =>{
-// console.log('load catergories');
-// console.log(data.categories)
-categories.forEach((item) => {
-    console.log(item);
+
+const categoryContainer=document.getElementById('categories');
+categories.forEach((item)=>{
+console.log(item);
+const button=document.createElement('button');
+button.classList='btn';
+button.innerText= item.category;
+   //add button to category container
+   categoryContainer.append(button);
 });
 };
 loadCategories();
