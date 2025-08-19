@@ -35,15 +35,26 @@ const displayVideos = (videos) =>{
         card.classList="card shadow-sm";
         card.innerHTML=
         `
-        <figure class="">
-    <img
+        <figure class="h-[200px]">
+    <img class="h-full w-full object-cover rounded-xl"
       src=${video.thumbnail}
-      alt="Shoes"
-      class="rounded-xl" />
+      alt="Shoes" />
   </figure>
-  <div class="card-body items-center text-center">
-    <h2 class="card-title">Card Title</h2>
-    <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+  <div class="px-0 py-2 flex gap-4">
+
+   <div>
+   <img class="ml-2 h-10 w-10 rounded-full object-cover" src=${video.authors[0].profile_picture} />
+   </div>
+       
+   <div class="w-full space-y-1">
+         <h2 class="font-bold text-xl">${video.title}</h2>
+        <div class="flex gap-2 items-center">
+        <p class="text-gray-400">${video.authors[0].profile_name}</p>
+
+        <img class="w-5" src="https://img.icons8.com/?size=100&id=98A4yZTt9abw&format=png&color=000000">
+        </div>
+        <p>${video.others.views} views</p>
+   </div>
    
   </div>
         
